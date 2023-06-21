@@ -1,0 +1,17 @@
+    {
+        "enabled": 1,
+        "hidden": false,
+        "description": "js",
+        "nixexprinput": "src",
+        "nixexprpath": "release.nix",
+        "checkinterval": 300,
+        "schedulingshares": 100,
+        "enableemail": false,
+        "enable_dynamic_run_command": false,
+        "emailoverride": "",
+        "keepnr": 3,
+        "inputs": {
+            "src": { "type": "git", "value": "git://github.com/boletus-edulis/hydra-test.git", "emailresponsible": false },
+            "nixpkgs": { "type": "git", "value": "git://github.com/NixOS/nixpkgs.git nixos-unstable", "emailresponsible": false }
+        }
+    }
