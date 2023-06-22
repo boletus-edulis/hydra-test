@@ -1,17 +1,17 @@
-    {
-        "enabled": 1,
-        "hidden": false,
-        "description": "js",
-        "nixexprinput": "src",
-        "nixexprpath": "release.nix",
-        "checkinterval": 300,
-        "schedulingshares": 100,
-        "enableemail": false,
-        "enable_dynamic_run_command": true,
-        "emailoverride": "",
-        "keepnr": 3,
-        "inputs": {
-            "src": { "type": "git", "value": "https://github.com/boletus-edulis/hydra-test", "emailresponsible": false },
-            "nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs nixos-unstable", "emailresponsible": false }
-        }
+{
+    "enabled": 1,
+    "hidden": false,
+    "description": "js",
+    "nixexprinput": "src",
+    "nixexprpath": "release.nix",
+    "checkinterval": 300,
+    "schedulingshares": 100,
+    "enableemail": false,
+    "enable_dynamic_run_command": true,
+    "emailoverride": "",
+    "keepnr": 3,
+    "inputs": {
+        "src": { "type": "git", "value": "https://github.com/boletus-edulis/hydra-test", "emailresponsible": false },
+        "nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs nixos-unstable", "emailresponsible": false }
     }
+}
