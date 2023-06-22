@@ -11,7 +11,7 @@
     "emailoverride": "",
     "keepnr": 3,
     "inputs": {
-        "src": { "type": "git", "value": "https://github.com/boletus-edulis/hydra-test", "emailresponsible": false },
-        "nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs nixos-unstable", "emailresponsible": false }
+        "src": { "type": "git", "value": "https://github.com/boletus-edulis/hydra-test.git master", "emailresponsible": false },
+        "nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs.git nixos-unstable", "emailresponsible": false }
     }
 }
