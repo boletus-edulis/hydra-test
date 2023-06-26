@@ -4,7 +4,7 @@
 	"hidden": false,
 	"description": "test",
 	"nixexprinput": "src",
-	"nixexprpath": "release.nix",
+	"nixexprpath": "flake.nix",
 	"checkinterval": 300,
 	"schedulingshares": 100,
 	"enableemail": false,
