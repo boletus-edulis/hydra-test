@@ -2,7 +2,6 @@
 let
   pkgs = import nixpkgs {};
 in {
-  iosevka-term = pkgs.iosevka.override {
-    set = "term";
-  };
+  iosevka-term = pkgs.iosevka.override { set = "term"; };
+  firefox = pkgs.firefox;
 }
