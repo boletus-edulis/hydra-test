@@ -18,11 +18,17 @@
     {
       packages = forAllSystems (system:
         {
-          iosevka-term = nixpkgs.legacyPackages.${system}.iosevka.override { set = "term"; };
+          iosevka-term = nixpkgs.legacyPackages.${system}.iosevka.override {
+            set = "term";
+          };
           #default = self.packages.${system}.iosevka-term;
         });
       hydraJobs = {
-        builderer = forAllSystems (system: self.packages.${system}.iosevka-term);
+        #iosevka-term = forAllSystems (system: self.packages.${system}.iosevka-term);
+        iosevka-term = forAllSystems (system:
+          nixpkgs.legacyPackages.${system}.iosevka.override {
+            set = "term";
+          });
       };
     };
 }
