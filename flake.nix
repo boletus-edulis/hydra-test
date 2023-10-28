@@ -20,7 +20,8 @@
             system
           }.iosevka.override { set = "term"; };
         });
-
-      build = forAllSystems (system: self.packages.${system}.iosevka-term);
+      hydraJobs = {
+        build = forAllSystems (system: self.packages.${system}.iosevka-term);
+      };
     };
 }
