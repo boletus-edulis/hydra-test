@@ -5,7 +5,10 @@
 
   outputs = { self, nixpkgs, ... } @ inputs:
     let
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
+      supportedSystems = [
+        #"x86_64-linux"
+        "aarch64-linux"
+      ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
       version = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./version);
@@ -15,9 +18,8 @@
     {
       packages = forAllSystems (system:
         {
-          iosevka-term = nixpkgs.legacyPackages.${system}
-            .iosevka.override { set = "term"; };
-          default = self.packages.${system}.iosevka-term;
+          iosevka-term = nixpkgs.legacyPackages.${system}.iosevka.override { set = "term"; };
+          #default = self.packages.${system}.iosevka-term;
         });
       hydraJobs = {
         build = forAllSystems (system: self.packages.${system}.iosevka-term);
