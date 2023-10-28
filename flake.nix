@@ -15,10 +15,9 @@
     {
       packages = forAllSystems (system:
         {
-          default = self.packages.${system}.patchelf;
-          packages.${system}.iosevka-term = nixpkgs.legacyPackages.${
-            system
-          }.iosevka.override { set = "term"; };
+          iosevka-term = nixpkgs.legacyPackages.${system}
+            .iosevka.override { set = "term"; };
+          default = self.packages.${system}.iosevka-term;
         });
       hydraJobs = {
         build = forAllSystems (system: self.packages.${system}.iosevka-term);
