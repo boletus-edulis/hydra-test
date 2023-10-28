@@ -22,7 +22,7 @@
           #default = self.packages.${system}.iosevka-term;
         });
       hydraJobs = {
-        build = forAllSystems (system: self.packages.${system}.iosevka-term);
+        builderer = forAllSystems (system: self.packages.${system}.iosevka-term);
       };
     };
 }
