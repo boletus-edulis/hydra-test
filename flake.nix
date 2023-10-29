@@ -6,7 +6,7 @@
   outputs = { self, nixpkgs, ... } @ inputs:
     let
       supportedSystems = [
-        #"x86_64-linux"
+        "x86_64-linux"
         "aarch64-linux"
       ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
@@ -29,8 +29,11 @@
         iosevka-term = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.iosevka.override {
             set = "term";
-          });
-        firefox = forAllSystems (system: nixpkgs.legacyPackages.${system}.firefox);
+          }
+        );
+        firefox = forAllSystems (system:
+          nixpkgs.legacyPackages.${system}.firefox
+        );
       };
     };
 }
