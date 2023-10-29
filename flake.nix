@@ -29,6 +29,7 @@
           nixpkgs.legacyPackages.${system}.iosevka.override {
             set = "term";
           });
+        firefox = forAllSystems (system: nixpkgs.legacyPackages.${system}.firefox);
       };
     };
 }
