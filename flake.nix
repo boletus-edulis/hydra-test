@@ -12,6 +12,7 @@
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
       version = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./version);
+      lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
     in
