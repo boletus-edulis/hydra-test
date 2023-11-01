@@ -25,22 +25,24 @@
         firefox = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.firefox
         );
-        linux_6_6_x13s = (pkgs.linux_testing.override {
-          argsOverride = rec {
-            version = "6.6";
-            modDirVersion = "6.6.0";
-            extraMeta.branch = lib.versions.majorMinor version;
-            #modDirVersion = lib.versions.pad 3 version;
+        linux_6_6_x13s =
+          nixpkgs.legacyPackages.aarch64-linux.linux_testing.override {
+            argsOverride = rec {
+              version = "6.6";
+              modDirVersion = "6.6.0";
+              extraMeta.branch = lib.versions.majorMinor version;
+              #modDirVersion = lib.versions.pad 3 version;
 
-            src = pkgs.fetchFromGitHub {
-              owner = "steev";
-              repo = "linux";
-              rev = "lenovo-x13s-linux-6.6.y";
-              sha256 = "sha256-LMpmRBHi7elsxdO94rYs2PgAjGo8CG2AZSkUzQJsU90=";
+              src = pkgs.fetchFromGitHub {
+                owner = "steev";
+                repo = "linux";
+                rev = "lenovo-x13s-linux-6.6.y";
+                sha256 = "sha256-LMpmRBHi7elsxdO94rYs2PgAjGo8CG2AZSkUzQJsU90=";
+              };
+
+              defconfig = "laptop_defconfig";
             };
-            defconfig = "laptop_defconfig";
           };
-        });
       };
     };
 }
