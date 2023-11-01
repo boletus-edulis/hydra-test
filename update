@@ -1,7 +1,7 @@
 #!/run/current-system/sw/bin/env bash
 
-ENV=/run/current-system/sw/bin/env
-${ENV} git fetch -a
-${ENV} git checkout -f origin/master
-${ENV} nix flake update --commit-lock-file
-${ENV} git push origin HEAD:master
+cd /home/Us0r/sources/hydra-test/
+/home/Us0r/.nix-profile/bin/git fetch -a
+/home/Us0r/.nix-profile/bin/git checkout -f origin/master
+/run/current-system/sw/bin/nix flake update --commit-lock-file
+/home/Us0r/.nix-profile/bin/git push origin HEAD:master
