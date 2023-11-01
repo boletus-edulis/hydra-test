@@ -25,8 +25,8 @@
         firefox = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.firefox
         );
-        linux_6_6_x13s =
-          nixpkgs.legacyPackages.aarch64-linux.linux_testing.override {
+        linux_6_6_x13s = forAllSystems (system:
+          nixpkgs.legacyPackages.${system}.linux_testing.override {
             argsOverride = rec {
               version = "6.6";
               modDirVersion = "6.6.0";
@@ -42,7 +42,7 @@
 
               defconfig = "laptop_defconfig";
             };
-          };
+          });
       };
     };
 }
