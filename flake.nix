@@ -33,7 +33,7 @@
               extraMeta.branch = lib.versions.majorMinor version;
               #modDirVersion = lib.versions.pad 3 version;
 
-              src = pkgs.fetchFromGitHub {
+              src = nixpkgs.legacyPackages.${system}.fetchFromGitHub {
                 owner = "steev";
                 repo = "linux";
                 rev = "lenovo-x13s-linux-6.6.y";
