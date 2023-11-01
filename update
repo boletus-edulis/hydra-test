@@ -3,4 +3,4 @@
 git fetch -a
 git checkout -f origin/master
 nix flake update --commit-lock-file
-git push origin master
+git push origin HEAD:master
