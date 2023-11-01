@@ -1,0 +1,6 @@
+#!/run/current-system/sw/bin/env bash
+
+git fetch -a
+git checkout -f origin/master
+nix flake update --commit-lock-file
+git push origin master
