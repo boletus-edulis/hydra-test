@@ -37,7 +37,7 @@
                 owner = "steev";
                 repo = "linux";
                 rev = "lenovo-x13s-linux-6.6.y";
-                sha256 = "sha256-LMpmRBHi7elsxdO94rYs2PgAjGo8CG2AZSkUzQJsU90=";
+                sha256 = "sha256-Pa89+GqmVrs0oZ/ALz23XUjUYjHSd7zoWoxF5ipsM90=";
               };
 
               defconfig = "laptop_defconfig";
