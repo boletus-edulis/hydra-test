@@ -27,11 +27,11 @@
           nixpkgs.legacyPackages.${system}.firefox
         );
         linux_6_6_x13s = forAllSystems (system:
-          nixpkgs.legacyPackages.${system}.linux_testing.override {
+          nixpkgs.legacyPackages.${system}.linux_6_6.override {
             argsOverride = rec {
-              version = "6.6";
-              modDirVersion = "6.6.0";
-              extraMeta.branch = lib.versions.majorMinor version;
+              #version = "6.6";
+              modDirVersion = "6.6.1";
+              #extraMeta.branch = lib.versions.majorMinor version;
               #modDirVersion = lib.versions.pad 3 version;
 
               src = nixpkgs.legacyPackages.${system}.fetchFromGitHub {
