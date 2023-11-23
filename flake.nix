@@ -29,11 +29,7 @@
         linux_6_6_x13s = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.linux_6_6.override {
             argsOverride = rec {
-              #version = "6.6";
-              modDirVersion = "6.6.1";
-              #extraMeta.branch = lib.versions.majorMinor version;
-              #modDirVersion = lib.versions.pad 3 version;
-
+              modDirVersion = "6.6.2";
               src = nixpkgs.legacyPackages.${system}.fetchFromGitHub {
                 owner = "steev";
                 repo = "linux";
