@@ -13,7 +13,7 @@
 
       version = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./version);
       lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      #pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
     in
     {
@@ -34,13 +34,11 @@
                 owner = "steev";
                 repo = "linux";
                 rev = "lenovo-x13s-linux-6.6.y";
-                sha256 = "sha256-lEw/AaEeOGClMP/pWLZ2RMGnr1ypBW6sLjCK961sDeI=";
+                sha256 = "sha256-fwZCsZdphpO1gJt9N4lT48hc7efFyVX02TuZGvzmJ14=";
               };
-
               defconfig = "laptop_defconfig";
             };
-          }
-        );
+          });
       };
     };
 }
