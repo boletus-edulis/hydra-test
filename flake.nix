@@ -29,12 +29,12 @@
         linux_6_6_x13s = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.linux_6_6.override {
             argsOverride = rec {
-              modDirVersion = "6.6.2";
+              modDirVersion = "6.6.9";
               src = nixpkgs.legacyPackages.${system}.fetchFromGitHub {
                 owner = "steev";
                 repo = "linux";
                 rev = "lenovo-x13s-linux-6.6.y";
-                sha256 = "sha256-ldoahxw3/6/FEeR8OOJy51Um1oT1g5mS6DN3tctY0M8=";
+                sha256 = "sha256-/YJBIPQiurwNuhySwb14JH5ApcvL6rlhrGT/77B5YfQ=";
               };
               defconfig = "laptop_defconfig";
             };
