@@ -28,7 +28,7 @@
         iosevka-term = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.iosevka.override { set = "term"; });
         linux_6_7_x13s = forAllSystems (system:
-          nixpkgs.legacyPackages.${system}.linux_6_6.override {
+          nixpkgs.legacyPackages.${system}.linux_6_7.override {
             argsOverride = rec {
               modDirVersion = "6.7.0";
               src = nixpkgs.legacyPackages.${system}.fetchFromGitHub {
