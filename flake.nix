@@ -26,15 +26,15 @@
         firefox = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.firefox
         );
-        linux_6_6_x13s = forAllSystems (system:
+        linux_6_7_x13s = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.linux_6_6.override {
             argsOverride = rec {
-              modDirVersion = "6.6.9";
+              modDirVersion = "6.7.0";
               src = nixpkgs.legacyPackages.${system}.fetchFromGitHub {
                 owner = "steev";
                 repo = "linux";
-                rev = "lenovo-x13s-linux-6.6.y";
-                sha256 = "sha256-/YJBIPQiurwNuhySwb14JH5ApcvL6rlhrGT/77B5YfQ=";
+                rev = "lenovo-x13s-linux-6.7.y";
+                sha256 = "sha256-eSQ40rRT0RmILlVUaUdt0eLDtbGozZu/Wr6UCi49O94=";
               };
               defconfig = "laptop_defconfig";
             };
