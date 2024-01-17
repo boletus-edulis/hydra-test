@@ -12,20 +12,21 @@
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
       version = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./version);
+
       lib = nixpkgs.lib;
-      #pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      makeJobs = pkglist:
+        (lib.attrsets.genAttrs pkglist
+          (name: forAllSystems (system: nixpkgs.legacyPackages.${system}.${name})));
 
     in
     {
-      hydraJobs = {
+      hydraJobs = makeJobs [
+        "thunderbird"
+        "firefox"
+        "scribus"
+      ] // {
         iosevka-term = forAllSystems (system:
-          nixpkgs.legacyPackages.${system}.iosevka.override {
-            set = "term";
-          }
-        );
-        firefox = forAllSystems (system:
-          nixpkgs.legacyPackages.${system}.firefox
-        );
+          nixpkgs.legacyPackages.${system}.iosevka.override { set = "term"; });
         linux_6_7_x13s = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.linux_6_6.override {
             argsOverride = rec {
