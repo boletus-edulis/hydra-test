@@ -39,6 +39,9 @@
                 sha256 = "sha256-z7+/4n1RyDXfs98LPOUUw8Xm05yDC53smWFCa3UGQfQ=";
               };
               defconfig = "laptop_defconfig";
+              structuredExtraConfig = with lib.kernel; {
+                VIDEO_AR1337 = no;
+              };
             };
           });
       };
