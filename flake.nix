@@ -11,43 +11,36 @@
         "aarch64-linux"
       ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-
       lib = nixpkgs.lib;
-      makeJobs = pkglist:
-        (lib.attrsets.genAttrs pkglist
-          (name: forAllSystems (system: nixpkgs.legacyPackages.${system}.${name})));
-
-      pkgNames = [
+      buildPackageAttrs = pkglist:
+        forAllSystems (system:
+          (lib.attrsets.genAttrs pkglist
+            (name: nixpkgs.legacyPackages.${system}.${name})));
+    in
+    rec {
+      packages = forAllSystems (system: (buildPackageAttrs [
         "thunderbird"
         "firefox"
         "scribus"
-      ];
-
-    in
-    rec {
-      hydraJobs = makeJobs pkgNames // {
-        iosevka-term = forAllSystems (system:
-          nixpkgs.legacyPackages.${system}.iosevka.override { set = "term"; });
-        linux_6_7_x13s = forAllSystems (system:
-          nixpkgs.legacyPackages.${system}.linux_6_7.override {
-            argsOverride = rec {
-              modDirVersion = "6.7.1";
-              src = nixpkgs.legacyPackages.${system}.fetchFromGitHub {
-                owner = "steev";
-                repo = "linux";
-                rev = "lenovo-x13s-linux-6.7.y";
-                sha256 = "sha256-z7+/4n1RyDXfs98LPOUUw8Xm05yDC53smWFCa3UGQfQ=";
-              };
-              defconfig = "laptop_defconfig";
-              structuredExtraConfig = with lib.kernel; {
-                VIDEO_AR1337 = no;
-              };
+      ]).${system} // {
+        iosevka-term = nixpkgs.legacyPackages.${system}.iosevka.override { set = "term"; };
+        linux_6_7_x13s = nixpkgs.legacyPackages.${system}.linux_6_7.override {
+          argsOverride = rec {
+            modDirVersion = "6.7.1";
+            src = nixpkgs.legacyPackages.${system}.fetchFromGitHub {
+              owner = "steev";
+              repo = "linux";
+              rev = "lenovo-x13s-linux-6.7.y";
+              sha256 = "sha256-z7+/4n1RyDXfs98LPOUUw8Xm05yDC53smWFCa3UGQfQ=";
             };
-          });
-      };
+            defconfig = "laptop_defconfig";
+            structuredExtraConfig = with lib.kernel; {
+              VIDEO_AR1337 = no;
+            };
+          };
+        };
+      });
 
-      packages = forAllSystems
-        (system: lib.genAttrs (lib.attrNames hydraJobs)
-          (job: hydraJobs.${job}.${system}));
+      hydraJobs = packages;
     };
 }
