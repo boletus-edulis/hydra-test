@@ -5,13 +5,12 @@
 
   outputs = { self, nixpkgs, ... } @ inputs:
     let
+      # version = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./version);
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
       ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-
-      version = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./version);
 
       lib = nixpkgs.lib;
       makeJobs = pkglist:
@@ -45,6 +44,7 @@
       };
 
       packages = forAllSystems
-        (system: lib.genAttrs (lib.attrNames hydraJobs) (job: hydraJobs.${job}.${system}));
+        (system: lib.genAttrs (lib.attrNames hydraJobs)
+          (job: hydraJobs.${job}.${system}));
     };
 }
