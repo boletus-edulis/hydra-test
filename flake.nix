@@ -6,7 +6,7 @@
   outputs = { self, nixpkgs, ... } @ inputs:
     let
       supportedSystems = [
-        #"x86_64-linux"
+        "x86_64-linux"
         "aarch64-linux"
       ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
@@ -18,13 +18,15 @@
         (lib.attrsets.genAttrs pkglist
           (name: forAllSystems (system: nixpkgs.legacyPackages.${system}.${name})));
 
-    in
-    {
-      hydraJobs = makeJobs [
+      pkgNames = [
         "thunderbird"
         "firefox"
         "scribus"
-      ] // {
+      ];
+
+    in
+    rec {
+      hydraJobs = makeJobs pkgNames // {
         iosevka-term = forAllSystems (system:
           nixpkgs.legacyPackages.${system}.iosevka.override { set = "term"; });
         linux_6_7_x13s = forAllSystems (system:
@@ -41,5 +43,8 @@
             };
           });
       };
+
+      packages = forAllSystems
+        (system: lib.genAttrs (lib.attrNames hydraJobs) (job: hydraJobs.${job}.${system}));
     };
 }
