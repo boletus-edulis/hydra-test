@@ -1,6 +1,6 @@
-{ pkgs, lib }:
+{ pkgs, lib, ... }:
 pkgs.linux_6_7.override {
-  argsOverride = rec {
+  argsOverride = {
     modDirVersion = "6.7.1";
     src = pkgs.fetchFromGitHub {
       owner = "steev";
