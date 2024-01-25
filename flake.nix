@@ -19,8 +19,8 @@
         in
         rec {
           packages = {
-            inherit (pkgs) thunderbird firefox scribus libvirt;
-          } // rec {
+            inherit (pkgs) thunderbird firefox scribus libvirt k3s;
+          } // {
             x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix {};
             qrtr = pkgs.callPackage ./pkgs/qrtr.nix {};
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
