@@ -56,6 +56,7 @@ pkgs.linux_6_7.override {
       USB_EHCI_HCD_PLATFORM = module;
       USB_OHCI_HCD = yes;
       USB_OHCI_HCD_PLATFORM = yes;
+      USB_UHCI_HCD = yes;
       USB_U132_HCD = module;
       USBIP_VHCI_HCD = module;
       SCSI_UFSHCD = yes;
