@@ -180,6 +180,7 @@
             };
           };
         };
+        linux_x13s = linux_6_7_x13s;
       });
 
       hydraJobs = packages;
