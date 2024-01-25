@@ -23,6 +23,7 @@
         "thunderbird"
         "firefox"
         "scribus"
+        "libvirt"
       ]).${system} // rec {
         x13s-firmware = (pkgs.${system}.stdenv.mkDerivation {
           pname = "x13s-firmware";
@@ -177,6 +178,16 @@
               CRYPTO_ANSI_CPRNG = yes;
               DEBUG_KERNEL = yes;
               DEBUG_FS = yes;
+              USB_EHCI_HCD = yes;
+              USB_EHCI_HCD_ORION = module;
+              USB_EHCI_HCD_PLATFORM = module;
+              USB_OHCI_HCD = yes;
+              USB_OHCI_HCD_PLATFORM = yes;
+              USB_U132_HCD = module;
+              USBIP_VHCI_HCD = module;
+              SCSI_UFSHCD = yes;
+              SCSI_UFSHCD_PCI = module;
+              SCSI_UFSHCD_PLATFORM = yes;
             };
           };
         };
