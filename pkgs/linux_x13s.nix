@@ -22,7 +22,7 @@ pkgs.linux_6_7.override {
       KEYBOARD_GPIO = yes;
       SERIAL_QCOM_GENI = yes;
       PINCTRL_QCOM_SPMI_PMIC = yes;
-      PINCTRL_SC8280XP_LPASS_LPI = yes;
+      PINCTRL_SC8280XP_LPASS_LPI = module;
       QCOM_TSENS = yes;
       BACKLIGHT_CLASS_DEVICE = yes;
       VIRTIO_MENU = yes;
