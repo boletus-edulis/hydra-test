@@ -26,7 +26,6 @@
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             iosevka-term = pkgs.iosevka.override { set = "term"; };
             linux_x13s = pkgs.callPackage ./pkgs/linux_x13s.nix { };
-            linuxPackages_x13s = pkgs.linuxPackagesFor pkgs.callPackage ./pkgs/linux_x13s.nix { };
           };
 
           devShells.default = pkgs.mkShell {
