@@ -2,8 +2,10 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -16,10 +18,21 @@
           pkgs = import inputs.nixpkgs {
             inherit system;
           };
+          rustVersion = "latest";
+          rustBranch = "nightly";
+          rustDev = pkgs.rust-bin.${rustBranch}.${rustVersion}.default.override {
+            extensions = [
+              "rust-src"
+              "rustc-dev"
+              "llvm-tools-preview"
+              "rust-analyzer-preview"
+            ];
+          };
         in
         rec {
           packages = {
-            inherit (pkgs) thunderbird firefox scribus libvirt k3s;
+            inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs git;
+            inherit rustDev;
           } // {
             x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
             qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
