@@ -15,8 +15,9 @@
       systems = [ "x86_64-linux" "aarch64-linux" ];
       perSystem = { config, self', inputs', pkgs, system, lib, ... }:
         let
-          pkgs = import inputs.nixpkgs {
+          pkgs = import nixpkgs {
             inherit system;
+            overlays = [ (import inputs.rust-overlay) ];
           };
           rustVersion = "latest";
           rustBranch = "nightly";
