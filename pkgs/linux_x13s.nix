@@ -1,13 +1,12 @@
-{ pkgs, lib, ... }:
+{ src
+, pkgs
+, lib
+, ...
+}:
 pkgs.linux_6_7.override {
   argsOverride = {
+    inherit src;
     modDirVersion = "6.7.1";
-    src = pkgs.fetchFromGitHub {
-      owner = "steev";
-      repo = "linux";
-      rev = "lenovo-x13s-linux-6.7.y";
-      sha256 = "sha256-z7+/4n1RyDXfs98LPOUUw8Xm05yDC53smWFCa3UGQfQ=";
-    };
     defconfig = "laptop_defconfig";
     #defconfig = "johan_defconfig";
     structuredExtraConfig = with lib.kernel; {

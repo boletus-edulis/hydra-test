@@ -8,6 +8,11 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    linux-steeve-6-7 = {
+      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.7.y";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, flake-parts, ... } @ inputs:
@@ -39,7 +44,7 @@
             qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             iosevka-term = pkgs.iosevka.override { set = "term"; };
-            linux_x13s = pkgs.callPackage ./pkgs/linux_x13s.nix { };
+            linux_x13s = pkgs.callPackage ./pkgs/linux_x13s.nix { src = inputs.linux-steeve-6-7; };
           };
 
           devShells.default = pkgs.mkShell {
