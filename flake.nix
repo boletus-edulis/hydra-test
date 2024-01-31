@@ -1,6 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-lib.url = "github:NixOS/nixpkgs/nixos-unstable?dir=lib";
 
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
@@ -12,7 +13,10 @@
       flake = false;
     };
 
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+    };
   };
 
   outputs = { self, nixpkgs, flake-parts, ... } @ inputs:
