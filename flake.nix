@@ -58,7 +58,7 @@
             ];
           };
         };
-      flake = { self, ... }@inputs: {
+      flake = {
         hydraJobs = self.packages;
       };
     };
