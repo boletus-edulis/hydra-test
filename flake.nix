@@ -2,8 +2,6 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    flake-parts.url = "github:hercules-ci/flake-parts";
-
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +11,8 @@
       url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.7.y";
       flake = false;
     };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs = { self, nixpkgs, flake-parts, ... } @ inputs:
