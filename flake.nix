@@ -58,14 +58,8 @@
             ];
           };
         };
-      flake = rec {
-        hydraJobs = self.packages // (inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./system/configuration.nix
-          ];
-        });
+      flake = {
+        hydraJobs = self.packages;
       };
     };
 }
