@@ -58,8 +58,17 @@
             ];
           };
         };
-      flake = {
-        hydraJobs = self.packages;
+      flake = rec {
+        nixosConfigurations = {
+          ribes-uva-crispa = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = { inherit inputs; };
+            modules = [
+              ./system/configuration.nix
+            ];
+          };
+        };
+        hydraJobs = self.packages // nixosConfigurations;
       };
     };
 }
