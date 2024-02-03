@@ -6,8 +6,8 @@
 pkgs.linux_6_7.override {
   argsOverride = {
     inherit src;
-    modDirVersion = lib.versions.pad 3 pkgs.linux_6_7.version;
-    #modDirVersion = "6.7.1";
+    #modDirVersion = lib.versions.pad 3 pkgs.linux_6_7.version;
+    modDirVersion = "6.7.3";
     defconfig = "laptop_defconfig";
     #defconfig = "johan_defconfig";
     structuredExtraConfig = with lib.kernel; {
