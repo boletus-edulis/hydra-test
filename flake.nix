@@ -38,11 +38,18 @@
               "rust-analyzer-preview"
             ];
           };
+
+          # builtins.getAttr system packages
+          #getNames = set: builtins.attrNames (builtins.getAttr system set);
+          # transpose = set: lib.genAttrs (builtins.attrNames (builtins.getAttr system set))
+          #  (name: { "${system}" = set."${name}"; });
+          # hydraJobs = transpose self.packages;
+          #transpose = set: (builtins.mapAttrs (name: value: { "${system}" = value;} ) (lib.getAttr system set));
         in
         rec {
           packages = {
             inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs git
-              waydroid qemu qemu_full;
+              waydroid qemu_full;
             inherit rustDev;
           } // {
             x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
