@@ -49,7 +49,7 @@
         {
           packages = {
             #inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs git; #qemu_full; # waydroid;
-            inherit rustDev;
+            #inherit rustDev;
           } // {
             x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
             qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
