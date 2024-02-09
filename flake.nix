@@ -48,11 +48,10 @@
         in
         {
           packages = {
-            inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs git
-              waydroid; # qemu_full;
-            inherit rustDev;
+            inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs git waydroid qemu_full;
+            #inherit rustDev;
           } // {
-            x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
+            # x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
             # qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
             # pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             # iosevka-term = pkgs.iosevka.override { set = "term"; };
