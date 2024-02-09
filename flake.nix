@@ -51,11 +51,11 @@
             inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs git; #qemu_full; # waydroid;
             inherit rustDev;
           } // {
-            # x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
-            # qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
-            # pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
-            # iosevka-term = pkgs.iosevka.override { set = "term"; };
-            # linux_x13s = pkgs.callPackage ./pkgs/linux_x13s.nix { src = inputs.linux-steeve-6-7; };
+            x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
+            qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
+            pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
+            iosevka-term = pkgs.iosevka.override { set = "term"; };
+            linux_x13s = pkgs.callPackage ./pkgs/linux_x13s.nix { src = inputs.linux-steeve-6-7; };
           };
 
           devShells.default = pkgs.mkShell {
