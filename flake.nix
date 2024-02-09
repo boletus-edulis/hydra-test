@@ -46,7 +46,7 @@
           # hydraJobs = transpose self.packages;
           #transpose = set: (builtins.mapAttrs (name: value: { "${system}" = value;} ) (lib.getAttr system set));
         in
-        rec {
+        {
           packages = {
             inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs git
               waydroid qemu_full;
