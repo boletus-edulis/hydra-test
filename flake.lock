@@ -38,19 +38,19 @@
         "type": "github"
       }
     },
-    "linux-steeve-6-7": {
+    "linux-steeve-6-8": {
       "flake": false,
       "locked": {
-        "lastModified": 1709322255,
-        "narHash": "sha256-T7Fu/knZ/CLlkGOKPdQiG/A2L2scBiHl2fyNhF/O4cU=",
-        "ref": "lenovo-x13s-linux-6.7.y",
-        "rev": "5e9c982da90e7546586b56ff92e785c8d9edd14b",
-        "revCount": 1237979,
+        "lastModified": 1710608945,
+        "narHash": "sha256-m8C6ydZS4bhJtY6148yE7Fn5V6mjQIDGAqM56Z9g+90=",
+        "ref": "lenovo-x13s-linux-6.8.y",
+        "rev": "f1845c1b1a370fae44589f9ed1e9861ff713f0b0",
+        "revCount": 1251393,
         "type": "git",
         "url": "https://github.com/steev/linux"
       },
       "original": {
-        "ref": "lenovo-x13s-linux-6.7.y",
+        "ref": "lenovo-x13s-linux-6.8.y",
         "type": "git",
         "url": "https://github.com/steev/linux"
       }
@@ -92,7 +92,7 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
-        "linux-steeve-6-7": "linux-steeve-6-7",
+        "linux-steeve-6-8": "linux-steeve-6-8",
         "nixpkgs": "nixpkgs",
         "nixpkgs-lib": "nixpkgs-lib",
         "rust-overlay": "rust-overlay"
