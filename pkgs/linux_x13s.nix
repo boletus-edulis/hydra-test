@@ -10,8 +10,8 @@ in
 linux.override {
   argsOverride = {
     inherit src;
-    #modDirVersion = lib.versions.pad 3 pkgs.linux_6_7.version;
-    inherit modDirVersion;
+    modDirVersion = "6.8.1";
+    # inherit modDirVersion;
     #"6.8.1";
     defconfig = "laptop_defconfig";
     #defconfig = "johan_defconfig";
