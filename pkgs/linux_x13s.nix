@@ -5,7 +5,7 @@
 }:
 let
   linux = pkgs.linux_6_8;
-  modDirVersion = pkgs.linux_6_8.modDirVersion;
+  modDirVersion = "$(cat $(pwd)/build/include/config/kernel.release)";
 in
 linux.override {
   argsOverride = {
