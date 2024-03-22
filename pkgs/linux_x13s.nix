@@ -4,17 +4,17 @@
 , ...
 }:
 let
-  linux = pkgs.linux_6_8;
+  linux = pkgs.linux_6_7;
   modDirVersion = "$(cat $(pwd)/build/include/config/kernel.release)";
 in
 linux.override {
   argsOverride = {
     inherit src;
-    modDirVersion = "6.8.1";
+    modDirVersion = "6.7.10";
     # inherit modDirVersion;
     #"6.8.1";
-    defconfig = "laptop_defconfig";
-    #defconfig = "johan_defconfig";
+    #defconfig = "laptop_defconfig";
+    configfile = ./laptop_defconfig;
     structuredExtraConfig = with lib.kernel; {
       VIDEO_AR1337 = no;
       AUDIT = yes;
@@ -38,13 +38,13 @@ linux.override {
       CRYPTO_AES_ARM64_BS = yes;
       CRYPTO_AES_ARM64_CE_CCM = yes;
 
-      QCOM_RPMPD = module;
-      QCOM_TSENS = module;
-      QCOM_STATS = module;
-      QCOM_RPMHPD = module;
-      QCOM_Q6V5_ADSP = module;
-      PHY_QCOM_QMP_PCIE_8996 = module;
-      PINCTRL_SC8280XP_LPASS_LPI = module;
+      #QCOM_RPMPD = module;
+      #QCOM_TSENS = module;
+      #QCOM_STATS = module;
+      #QCOM_RPMHPD = module;
+      #QCOM_Q6V5_ADSP = module;
+      #PHY_QCOM_QMP_PCIE_8996 = module;
+      #PINCTRL_SC8280XP_LPASS_LPI = module;
     };
   };
 }
