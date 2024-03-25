@@ -14,9 +14,9 @@ linux.override {
     # inherit modDirVersion;
     #"6.8.1";
     #defconfig = "laptop_defconfig";
-    configfile = ./laptop_defconfig;
-    structuredExtraConfig = with lib.kernel; {
-      VIDEO_AR1337 = no;
+    configfile = ./laptop_defconfig_expanded;
+#    structuredExtraConfig = with lib.kernel; {
+#      VIDEO_AR1337 = no;
 #      AUDIT = yes;
 #      ARM64_SME = yes;
 #      MAC80211_LEDS = yes;
@@ -45,6 +45,6 @@ linux.override {
 #      #QCOM_Q6V5_ADSP = module;
 #      #PHY_QCOM_QMP_PCIE_8996 = module;
 #      #PINCTRL_SC8280XP_LPASS_LPI = module;
-    };
+#    };
   };
 }
