@@ -1,20 +1,20 @@
 { src
 , pkgs
 , lib
+, linuxManualConfig
 , ...
 }:
 let
   linux = pkgs.linux_6_7;
   modDirVersion = "$(cat $(pwd)/build/include/config/kernel.release)";
 in
-linux.override {
-  argsOverride = {
-    inherit src;
-    modDirVersion = "6.7.10";
-    # inherit modDirVersion;
-    #"6.8.1";
-    #defconfig = "laptop_defconfig";
-    configfileer = ./laptop_defconfig_expanded;
+#linux.override {
+#  argsOverride = {
+#    inherit src;
+#    modDirVersion = "6.7.10";
+#    # inherit modDirVersion;
+#    #"6.8.1";
+#    defconfig = "laptop_defconfig";
 #    structuredExtraConfig = with lib.kernel; {
 #      VIDEO_AR1337 = no;
 #      AUDIT = yes;
@@ -46,5 +46,10 @@ linux.override {
 #      #PHY_QCOM_QMP_PCIE_8996 = module;
 #      #PINCTRL_SC8280XP_LPASS_LPI = module;
 #    };
-  };
+#  };
+#}
+linuxManualConfig {
+  inherit (linux) version;
+  inherit src;
+  configfile = ./laptop_defconfig;
 }
