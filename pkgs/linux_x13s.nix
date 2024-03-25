@@ -14,7 +14,7 @@ linux.override {
     # inherit modDirVersion;
     #"6.8.1";
     #defconfig = "laptop_defconfig";
-    configfile = ./laptop_defconfig_expanded;
+    configfileer = ./laptop_defconfig_expanded;
 #    structuredExtraConfig = with lib.kernel; {
 #      VIDEO_AR1337 = no;
 #      AUDIT = yes;
