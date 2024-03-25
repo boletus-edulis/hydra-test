@@ -1,11 +1,12 @@
 { src
-, pkgs
+, linux_6_7
 , lib
+, stdenv
 , linuxManualConfig
 , ...
-}:
+} @ args:
 let
-  linux = pkgs.linux_6_7;
+  linux = linux_6_7;
   modDirVersion = "$(cat $(pwd)/build/include/config/kernel.release)";
 in
 #linux.override {
@@ -48,8 +49,38 @@ in
 #    };
 #  };
 #}
-linuxManualConfig {
+linuxManualConfig (args // {
   inherit (linux) version;
   inherit src;
   configfile = ./laptop_defconfig;
-}
+  structuredExtraConfig = with lib.kernel; {
+    VIDEO_AR1337 = no;
+    ANDROID_BINDER_IPC = yes;
+    ANDROID_BINDERFS = yes;
+    MEMFD_CREATE = yes;
+    DEVTMPFS = yes;
+    CGROUPS = yes;
+    INOTIFY_USER = yes;
+    SIGNALFD = yes;
+    TIMERFD = yes;
+    EPOLL = yes;
+    NET = yes;
+    SYSFS = yes;
+    PROC_FS = yes;
+    FHANDLE = yes;
+    CRYPTO_USER_API_HASH = yes;
+    CRYPTO_HMAC = yes;
+    CRYPTO_SHA256 = yes;
+    DMIID = yes;
+    AUTOFS_FS = yes;
+    TMPFS_POSIX_ACL = yes;
+    TMPFS_XATTR = yes;
+    SECCOMP = yes;
+
+    TMPFS = yes;
+    BLK_DEV_INITRD = yes;
+    MODULES = yes;
+    BINFMT_ELF = yes;
+    UNIX = yes;
+  };
+}) // (args.argsOverride or {})
