@@ -7,7 +7,7 @@
 } @ args:
 let
   linux = pkgs.linux_6_7;
-  modDirVersion = "$(cat $(pwd)/build/include/config/kernel.release)";
+  modDirVersion = "6.7.10"; #"$(cat $(pwd)/build/include/config/kernel.release)";
 in
 linux.override {
   argsOverride = {
@@ -15,7 +15,6 @@ linux.override {
     #modDirVersion = "6.7.10";
     inherit modDirVersion;
     defconfig = "laptop_defconfig";
-    kernelPreferBuiltin = true;
     structuredExtraConfig = with lib.kernel; {
       VIDEO_AR1337 = no;
       AUDIT = yes;
