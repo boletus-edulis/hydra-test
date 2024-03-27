@@ -45,6 +45,7 @@ linux.override {
       CRYPTO_AES_ARM64_BS = yes;
       CRYPTO_AES_ARM64_CE_CCM = yes;
       CONFIG_CRYPTO_DEV_CCREE = module;
+
       #QCOM_RPMPD = module;
       #QCOM_TSENS = module;
       #QCOM_STATS = module;
@@ -52,43 +53,71 @@ linux.override {
       #QCOM_Q6V5_ADSP = module;
       #PHY_QCOM_QMP_PCIE_8996 = module;
       #PINCTRL_SC8280XP_LPASS_LPI = module;
+
+      ANDROID_BINDER_IPC = yes;
+      ANDROID_BINDERFS = yes;
+      MEMFD_CREATE = yes;
+      DEVTMPFS = yes;
+      CGROUPS = yes;
+      INOTIFY_USER = yes;
+      SIGNALFD = yes;
+      TIMERFD = yes;
+      EPOLL = yes;
+      NET = yes;
+      SYSFS = yes;
+      PROC_FS = yes;
+      FHANDLE = yes;
+      CRYPTO_USER_API_HASH = yes;
+      CRYPTO_HMAC = yes;
+      CRYPTO_SHA256 = yes;
+      DMIID = yes;
+      AUTOFS_FS = yes;
+      TMPFS_POSIX_ACL = yes;
+      TMPFS_XATTR = yes;
+      SECCOMP = yes;
+
+      TMPFS = yes;
+      BLK_DEV_INITRD = yes;
+      MODULES = yes;
+      BINFMT_ELF = yes;
+      UNIX = yes;
     };
   };
 }
 
-#linuxManualConfig {
-#  inherit (linux) version;
-#  inherit modDirVersion;
-#  inherit src;
-#  configfile = ./laptop_defconfig_expanded;
-#  extraConfig = with lib.kernel; {
-#    VIDEO_AR1337 = no;
-#    ANDROID_BINDER_IPC = yes;
-#    ANDROID_BINDERFS = yes;
-#    MEMFD_CREATE = yes;
-#    DEVTMPFS = yes;
-#    CGROUPS = yes;
-#    INOTIFY_USER = yes;
-#    SIGNALFD = yes;
-#    TIMERFD = yes;
-#    EPOLL = yes;
-#    NET = yes;
-#    SYSFS = yes;
-#    PROC_FS = yes;
-#    FHANDLE = yes;
-#    CRYPTO_USER_API_HASH = yes;
-#    CRYPTO_HMAC = yes;
-#    CRYPTO_SHA256 = yes;
-#    DMIID = yes;
-#    AUTOFS_FS = yes;
-#    TMPFS_POSIX_ACL = yes;
-#    TMPFS_XATTR = yes;
-#    SECCOMP = yes;
-#
-#    TMPFS = yes;
-#    BLK_DEV_INITRD = yes;
-#    MODULES = yes;
-#    BINFMT_ELF = yes;
-#    UNIX = yes;
-#  };
-#}
+  #linuxManualConfig {
+  #  inherit (linux) version;
+  #  inherit modDirVersion;
+  #  inherit src;
+  #  configfile = ./laptop_defconfig_expanded;
+  #  extraConfig = with lib.kernel; {
+  #    VIDEO_AR1337 = no;
+  #    ANDROID_BINDER_IPC = yes;
+  #    ANDROID_BINDERFS = yes;
+  #    MEMFD_CREATE = yes;
+  #    DEVTMPFS = yes;
+  #    CGROUPS = yes;
+  #    INOTIFY_USER = yes;
+  #    SIGNALFD = yes;
+  #    TIMERFD = yes;
+  #    EPOLL = yes;
+  #    NET = yes;
+  #    SYSFS = yes;
+  #    PROC_FS = yes;
+  #    FHANDLE = yes;
+  #    CRYPTO_USER_API_HASH = yes;
+  #    CRYPTO_HMAC = yes;
+  #    CRYPTO_SHA256 = yes;
+  #    DMIID = yes;
+  #    AUTOFS_FS = yes;
+  #    TMPFS_POSIX_ACL = yes;
+  #    TMPFS_XATTR = yes;
+  #    SECCOMP = yes;
+  #
+  #    TMPFS = yes;
+  #    BLK_DEV_INITRD = yes;
+  #    MODULES = yes;
+  #    BINFMT_ELF = yes;
+  #    UNIX = yes;
+  #  };
+  #}
