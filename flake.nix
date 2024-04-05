@@ -13,6 +13,11 @@
       flake = false;
     };
 
+    linux-steeve-6-8 = {
+      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.8.y";
+      flake = false;
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
@@ -44,7 +49,9 @@
           # transpose = set: lib.genAttrs (builtins.attrNames (builtins.getAttr system set))
           #  (name: { "${system}" = set."${name}"; });
           # hydraJobs = transpose self.packages;
-          #transpose = set: (builtins.mapAttrs (name: value: { "${system}" = value;} ) (lib.getAttr system set));
+          #transpose = set: (builtins.mapAttrs
+          #  (name: value: { "${system}" = value;} )
+          #  (lib.getAttr system set));
         in
         {
           packages = {
@@ -55,14 +62,16 @@
             qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             iosevka-term = pkgs.iosevka.override { set = "Term"; };
-            linux_x13s = pkgs.callPackage ./pkgs/linux_x13s.nix { src = inputs.linux-steeve-6-7; };
+            linux_x13s_6_7 = pkgs.callPackage ./pkgs/linux_x13s.nix {
+              src = inputs.linux-steeve-6-7;
+            };
+            linux_x13s = pkgs.callPackage ./pkgs/linux_x13s_6_8.nix {
+              src = inputs.linux-steeve-6-8;
+            };
           };
 
           devShells.default = pkgs.mkShell {
-            packages = with pkgs; [
-              nixpkgs-fmt
-              nil
-            ];
+            packages = with pkgs; [ nixpkgs-fmt nil ];
           };
         };
       flake = {
