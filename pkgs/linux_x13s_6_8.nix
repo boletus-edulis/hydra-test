@@ -23,32 +23,31 @@ pkgs.buildLinux (args // {
     KEYBOARD_GPIO = yes;
     SERIAL_QCOM_GENI = yes;
     PINCTRL_QCOM_SPMI_PMIC = yes;
-    PINCTRL_SC8280XP_LPASS_LPI = module;
-    QCOM_TSENS = yes;
+    #QCOM_TSENS = yes;
     BACKLIGHT_CLASS_DEVICE = yes;
     VIRTIO_MENU = yes;
     VHOST_MENU = yes;
     SC_GCC_8280XP = yes;
     SC_GPUCC_8280XP = yes;
-    QCOM_Q6V5_ADSP = module;
-    QCOM_STATS = yes;
+    #QCOM_STATS = yes;
     QCOM_CPR = yes;
-    QCOM_RPMHPD = yes;
-    QCOM_RPMPD = yes;
-    PHY_QCOM_QMP_PCIE_8996 = yes;
+    #QCOM_RPMHPD = yes;
+    #QCOM_RPMPD = yes;
+    #PHY_QCOM_QMP_PCIE_8996 = yes;
     NVMEM_QCOM_QFPROM = yes;
     CRYPTO_AES_ARM64_CE_BLK = yes;
     CRYPTO_AES_ARM64_BS = yes;
     CRYPTO_AES_ARM64_CE_CCM = yes;
     CONFIG_CRYPTO_DEV_CCREE = module;
 
-    #QCOM_RPMPD = module;
-    #QCOM_TSENS = module;
-    #QCOM_STATS = module;
-    #QCOM_RPMHPD = module;
-    #QCOM_Q6V5_ADSP = module;
-    #PHY_QCOM_QMP_PCIE_8996 = module;
-    #PINCTRL_SC8280XP_LPASS_LPI = module;
+    # put all of them in the initrd?
+    QCOM_RPMPD = module;
+    QCOM_TSENS = module;
+    QCOM_STATS = module;
+    QCOM_RPMHPD = module;
+    QCOM_Q6V5_ADSP = module;
+    PHY_QCOM_QMP_PCIE_8996 = module;
+    PINCTRL_SC8280XP_LPASS_LPI = module;
 
     #ANDROID_BINDER_IPC = yes;
     #ANDROID_BINDERFS = yes;
