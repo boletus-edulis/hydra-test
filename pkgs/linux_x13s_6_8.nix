@@ -10,7 +10,8 @@ in
 pkgs.buildLinux (args // {
   inherit version;
   inherit src;
-  defconfig = "laptop_defconfig";
+  #defconfig = "laptop_defconfig";
+  defconfig = "johan_defconfig";
   structuredExtraConfig = with lib.kernel; {
 #    VIDEO_AR1337 = no;
 #    AUDIT = yes;
