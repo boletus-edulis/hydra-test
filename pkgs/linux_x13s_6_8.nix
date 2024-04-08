@@ -14,10 +14,11 @@ pkgs.buildLinux (args // {
   defconfig = "johan_defconfig";
   structuredExtraConfig = with lib.kernel; {
     # nixpkgs/nixos/modules/system/boot/kernel.nix wants there
-    USB_UHCI_HCD = yes;
-    USB_EHCI_PCI = yes;
-    USB_OHCI_HCD_PCI = yes;
-    USB_XHCI_PCI = yes;
+    USB_PCI = yes;
+    USB_UHCI_HCD = module;
+    USB_EHCI_PCI = module;
+    USB_OHCI_HCD_PCI = module;
+    USB_XHCI_PCI = module;
 
 #    VIDEO_AR1337 = no;
 #    AUDIT = yes;
