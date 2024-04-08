@@ -43,9 +43,9 @@ pkgs.buildLinux (args // {
     QCOM_QSEECOM = yes;
     SCSI = yes;
     I2C_QCOM_CCI = yes;
-    GPIO_WCD934X = yes;
+    #GPIO_WCD934X = yes;
     QCOM_LMH = yes;
-    MFD_WCD934X = yes;
+    #MFD_WCD934X = module;
 
     CONFIG_CRYPTO_DEV_CCREE = module;
 
