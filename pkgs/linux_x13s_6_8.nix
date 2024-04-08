@@ -38,6 +38,15 @@ pkgs.buildLinux (args // {
     CRYPTO_AES_ARM64_CE_BLK = yes;
     CRYPTO_AES_ARM64_BS = yes;
     CRYPTO_AES_ARM64_CE_CCM = yes;
+
+    QCOM_SSC_BLOCK_BUS = yes;
+    QCOM_QSEECOM = yes;
+    SCSI = yes;
+    I2C_QCOM_CCI = yes;
+    GPIO_WCD934X = yes;
+    QCOM_LMH = yes;
+    MFD_WCD934X = yes;
+
     CONFIG_CRYPTO_DEV_CCREE = module;
 
     # put all of them in the initrd?
@@ -48,6 +57,8 @@ pkgs.buildLinux (args // {
     QCOM_Q6V5_ADSP = module;
     PHY_QCOM_QMP_PCIE_8996 = module;
     PINCTRL_SC8280XP_LPASS_LPI = module;
+    PHY_QCOM_QMP_USB_SNPS_FEMTO_V2 = module;
+#    I2C_QCOM_CCI = module;
 
     #ANDROID_BINDER_IPC = yes;
     #ANDROID_BINDERFS = yes;
