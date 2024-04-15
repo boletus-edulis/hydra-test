@@ -5,7 +5,7 @@
 , ...
 } @ args:
 let
-  version = "6.8.1";
+  version = "6.8.5";
 in
 pkgs.buildLinux (args // {
   inherit version;
