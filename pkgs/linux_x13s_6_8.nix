@@ -20,6 +20,10 @@ pkgs.buildLinux (args // {
     USB_OHCI_HCD_PCI = module;
     USB_XHCI_PCI = module;
 
+    # fix poweroff?
+    POWER_RESET_SYSCON_POWEROFF = yes;
+    POWER_RESET_SYSCON = yes;
+
 #    VIDEO_AR1337 = no;
 #    AUDIT = yes;
 #    ARM64_SME = yes;
