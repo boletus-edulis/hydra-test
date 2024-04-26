@@ -39,6 +39,7 @@
             ];
           };
 
+          #inherit (nixpkgs.lib.customisation) hydraJob;
           # builtins.getAttr system packages
           #getNames = set: builtins.attrNames (builtins.getAttr system set);
           # transpose = set: lib.genAttrs (builtins.attrNames (builtins.getAttr system set))
