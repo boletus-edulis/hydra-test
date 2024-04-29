@@ -13,6 +13,11 @@
       flake = false;
     };
 
+    linux-jhovold-6-9 = {
+      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.9-rc6";
+      flake = false;
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
@@ -60,6 +65,9 @@
             iosevka-term = pkgs.iosevka.override { set = "Term"; };
             linux_x13s = pkgs.callPackage ./pkgs/linux_x13s_6_8.nix {
               src = inputs.linux-steeve-6-8;
+            };
+            linux_x13s_6_9 = pkgs.callPackage ./pkgs/linux_x13s_6_9.nix {
+              src = inputs.linux-jhovold-6-9;
             };
           };
 
