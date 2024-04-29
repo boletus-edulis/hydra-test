@@ -8,6 +8,7 @@ let
   version = "6.9.0";
 in
 pkgs.buildLinux (args // {
+  modDirVersion = "6.9.0-rc6";
   inherit version;
   inherit src;
 
