@@ -22,6 +22,11 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
     };
+
+    emacs-overlay ={
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, flake-parts, ... } @ inputs:
@@ -31,7 +36,10 @@
         let
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ (import inputs.rust-overlay) ];
+            overlays = [
+              (import inputs.rust-overlay)
+              (import inputs.emacs-overlay)
+            ];
           };
           rustVersion = "latest";
           rustBranch = "nightly";
@@ -56,7 +64,7 @@
         in
         {
           packages = {
-            inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs-nox git qemu waydroid;
+            inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs-nox git qemu waydroid emacs-git-nox;
             inherit rustDev;
           } // {
             x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
