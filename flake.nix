@@ -14,7 +14,7 @@
     };
 
     linux-jhovold-6-9 = {
-      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.9-rc7";
+      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.9";
       flake = false;
     };
 
