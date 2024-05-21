@@ -2,13 +2,14 @@
 , pkgs
 , lib
 , stdenv
+, version
 , ...
 } @ args:
 let
-  version = "6.9.0";
+  modDirVersion = version;
 in
 pkgs.buildLinux (args // {
-  modDirVersion = "6.9.0";
+  inherit modDirVersion;
   inherit version;
   inherit src;
 
