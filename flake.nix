@@ -86,7 +86,7 @@
             };
             linux_x13s_6_9_steev = pkgs.callPackage ./pkgs/linux_x13s_6_9.nix {
               src = inputs.linux-steev-6-9;
-              version = "6.9.1";
+              version = "6.9.2";
             };
 
           };
