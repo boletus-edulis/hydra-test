@@ -95,7 +95,7 @@
         "url": "https://github.com/jhovold/linux"
       }
     },
-    "linux-steeve-6-9": {
+    "linux-steev-6-9": {
       "flake": false,
       "locked": {
         "lastModified": 1716823711,
@@ -167,7 +167,7 @@
         "emacs-overlay": "emacs-overlay",
         "flake-parts": "flake-parts",
         "linux-jhovold-6-9": "linux-jhovold-6-9",
-        "linux-steeve-6-9": "linux-steeve-6-9",
+        "linux-steev-6-9": "linux-steev-6-9",
         "nixpkgs": "nixpkgs",
         "nixpkgs-lib": "nixpkgs-lib",
         "rust-overlay": "rust-overlay"
