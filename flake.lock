@@ -78,6 +78,23 @@
         "type": "github"
       }
     },
+    "linux-jhovold-6-10-rc1": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1717058761,
+        "narHash": "sha256-TwudzzlRgPdmtLVmwFVwLGXAGScSn2z4vJKWD6T7nAg=",
+        "ref": "wip/sc8280xp-6.10-rc1",
+        "rev": "0a82d7f4bb087c9c57a7a185f77c987f3fc4f5b2",
+        "revCount": 1279407,
+        "type": "git",
+        "url": "https://github.com/jhovold/linux"
+      },
+      "original": {
+        "ref": "wip/sc8280xp-6.10-rc1",
+        "type": "git",
+        "url": "https://github.com/jhovold/linux"
+      }
+    },
     "linux-jhovold-6-9": {
       "flake": false,
       "locked": {
@@ -166,6 +183,7 @@
       "inputs": {
         "emacs-overlay": "emacs-overlay",
         "flake-parts": "flake-parts",
+        "linux-jhovold-6-10-rc1": "linux-jhovold-6-10-rc1",
         "linux-jhovold-6-9": "linux-jhovold-6-9",
         "linux-steev-6-9": "linux-steev-6-9",
         "nixpkgs": "nixpkgs",
