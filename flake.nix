@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    linux-steeve-6-9 = {
+    linux-steev-6-9 = {
       url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.9.y";
       flake = false;
     };
