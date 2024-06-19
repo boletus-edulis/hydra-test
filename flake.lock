@@ -63,16 +63,16 @@
     "linux-jhovold-6-10": {
       "flake": false,
       "locked": {
-        "lastModified": 1717846555,
-        "narHash": "sha256-VWoIoS4A3T0rqkOytOyQp5B63PfkKqpwEdIA6JvG230=",
-        "ref": "wip/sc8280xp-6.10-rc2",
-        "rev": "9782b2bf13a2832bdcf0b6c682e92ea5e06cd174",
-        "revCount": 1279731,
+        "lastModified": 1718108057,
+        "narHash": "sha256-nCvDjbhTg3DmM3wRO5hOlks1TXcvMGBHr7NNbs4Zq2c=",
+        "ref": "wip/sc8280xp-6.10-rc3",
+        "rev": "6f7832ef359e0a7f564b1ddd5e0148979c5c5c79",
+        "revCount": 1280113,
         "type": "git",
         "url": "https://github.com/jhovold/linux"
       },
       "original": {
-        "ref": "wip/sc8280xp-6.10-rc2",
+        "ref": "wip/sc8280xp-6.10-rc3",
         "type": "git",
         "url": "https://github.com/jhovold/linux"
       }

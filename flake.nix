@@ -19,7 +19,7 @@
     };
 
     linux-jhovold-6-10 = {
-      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.10-rc2";
+      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.10-rc3";
       flake = false;
     };
 
@@ -78,7 +78,7 @@
             iosevka-term = pkgs.iosevka.override { set = "Term"; };
             linux_x13s_6_10 = pkgs.callPackage ./pkgs/linux_x13s_6_9.nix {
               src = inputs.linux-jhovold-6-10;
-              version = "6.10.0-rc2";
+              version = "6.10.0-rc3";
             };
             linux_x13s_6_9 = pkgs.callPackage ./pkgs/linux_x13s_6_9.nix {
               src = inputs.linux-jhovold-6-9;
