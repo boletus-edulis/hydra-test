@@ -77,6 +77,23 @@
         "url": "https://github.com/jhovold/linux"
       }
     },
+    "linux-jhovold-6-11": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722263524,
+        "narHash": "sha256-WTf4tMT6x5a0DlkNPnqHmgaSKNFU3Y8cKMcjH4/Jho0=",
+        "ref": "wip/sc8280xp-6.11-rc1",
+        "rev": "9c6b81022b9c277d65c68e25f4cfd52f33ef8f28",
+        "revCount": 1294509,
+        "type": "git",
+        "url": "https://github.com/jhovold/linux"
+      },
+      "original": {
+        "ref": "wip/sc8280xp-6.11-rc1",
+        "type": "git",
+        "url": "https://github.com/jhovold/linux"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1722813957,
@@ -132,6 +149,7 @@
         "emacs-overlay": "emacs-overlay",
         "flake-parts": "flake-parts",
         "linux-jhovold-6-10": "linux-jhovold-6-10",
+        "linux-jhovold-6-11": "linux-jhovold-6-11",
         "nixpkgs": "nixpkgs",
         "nixpkgs-lib": "nixpkgs-lib",
         "rust-overlay": "rust-overlay"
