@@ -25,13 +25,11 @@ pkgs.stdenv.mkDerivation {
 
     mkdir -p "$out/lib/firmware/qcom/sc8280xp/LENOVO/21BX"
     cp -fv "x13s-firmware/qcvss8280.mbn" \
-       "$out/lib/firmware/qcom/sc8280xp/LENOVO/21BX"
+        "$out/lib/firmware/qcom/sc8280xp/LENOVO/21BX"
 
     mkdir -p "$out/lib/firmware/qca"
     cp -fv "x13s-firmware/hpnv21.b8c" "$out/lib/firmware/qca"
     cp -fv "x13s-firmware/a690_gmu.bin" "$out/lib/firmware/qcom"
-    # cp -fv "$out/lib/firmware/qcom/sc8280xp/LENOVO/21BX/audioreach-tplg.bin" \
-    #    "$out/lib/firmware/qcom/sc8280xp/SC8280XP-LENOVO-X13S-tplg.bin"
 
     runHook postInstall
   '';
