@@ -8,13 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    linux-jhovold-6-11 = {
-      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.11-rc7";
-      flake = false;
-    };
-
-    linux-jhovold-6-10 = {
-      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.10";
+    linux-jhovold-6-12 = {
+      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.12-rc2";
       flake = false;
     };
 
@@ -74,13 +69,9 @@
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             iosevka-term = pkgs.iosevka.override { set = "Term"; };
 
-            linux_x13s_6_10 = pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-jhovold-6-10;
-              version = "6.10.0";
-            };
-            linux_x13s_6_11 = pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-jhovold-6-11;
-              version = "6.11.0-rc7";
+            linux_x13s_6_12 = pkgs.callPackage ./pkgs/linux_x13s.nix {
+              src = inputs.linux-jhovold-6-12;
+              version = "6.12.0-rc2";
             };
           };
 
