@@ -25,6 +25,8 @@ pkgs.buildLinux (args // {
     # fix poweroff?
     POWER_RESET_SYSCON_POWEROFF = yes;
     POWER_RESET_SYSCON = yes;
+
+    ZLIB_DEFLATE = yes;
   };
   extraMeta.branch = "${version}-x13s";
 } // (args.argsOverride or {}))
