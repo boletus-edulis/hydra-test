@@ -9,7 +9,7 @@
     };
 
     linux-jhovold-6-12 = {
-      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.12-rc2";
+      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.12-rc3";
       flake = false;
     };
 
@@ -71,7 +71,7 @@
 
             linux_x13s_6_12 = pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-jhovold-6-12;
-              version = "6.12.0-rc2";
+              version = "6.12.0-rc3";
             };
           };
 
