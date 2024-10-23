@@ -26,6 +26,8 @@ pkgs.buildLinux (args // {
     POWER_RESET_SYSCON_POWEROFF = yes;
     POWER_RESET_SYSCON = yes;
 
+    PSTORE = yes;
+    PSTORE_DEFLATE_COMPRESS = yes;
     ZLIB_DEFLATE = yes;
   };
   extraMeta.branch = "${version}-x13s";
