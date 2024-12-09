@@ -80,7 +80,7 @@
             };
             linux_x13s_6_13 = pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-jhovold-6-13;
-              version = "6.13.0-rc1";
+              version = "6.13-rc1";
             };
           };
 
