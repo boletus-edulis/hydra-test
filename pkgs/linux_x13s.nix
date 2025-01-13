@@ -3,6 +3,7 @@
 , lib
 , stdenv
 , version
+, defconfig
 , ...
 } @ args:
 let
@@ -10,10 +11,10 @@ let
 in
 pkgs.buildLinux (args // {
   inherit modDirVersion;
+  inherit defconfig;
   inherit version;
   inherit src;
 
-  defconfig = "johan_defconfig";
   structuredExtraConfig = with lib.kernel; {
     # nixpkgs/nixos/modules/system/boot/kernel.nix wants there
     USB_PCI = yes;

@@ -8,13 +8,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    linux-steeve-6-12 = {
+      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.12.y";
+      flake = false;
+    };
+
     linux-jhovold-6-12 = {
       url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.12";
       flake = false;
     };
 
     linux-jhovold-6-13 = {
-      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.13-rc3";
+      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.13-rc7";
       flake = false;
     };
 
@@ -74,13 +79,20 @@
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             iosevka-term = pkgs.iosevka.override { set = "Term"; };
 
+            linux_x13s_6_12_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
+              src = inputs.linux-steeve-6-12;
+              version = "6.12.9";
+              defconfig = "johan_defconfig";
+            };
             linux_x13s_6_12 = pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-jhovold-6-12;
               version = "6.12.0";
+              defconfig = "johan_defconfig";
             };
             linux_x13s_6_13 = pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-jhovold-6-13;
-              version = "6.13.0-rc3";
+              version = "6.13.0-rc7";
+              defconfig = "johan_defconfig";
             };
           };
 
