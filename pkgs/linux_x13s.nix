@@ -15,6 +15,8 @@ pkgs.buildLinux (args // {
   inherit version;
   inherit src;
 
+  ignoreConfigErrors = true;
+
   structuredExtraConfig = with lib.kernel; {
     # nixpkgs/nixos/modules/system/boot/kernel.nix wants there
     USB_PCI = yes;
