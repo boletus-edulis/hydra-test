@@ -81,7 +81,7 @@
 
             linux_x13s_6_12_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-steeve-6-12;
-              version = "6.12.9";
+              version = "6.12.12";
               defconfig = "johan_defconfig";
             };
             linux_x13s_6_12 = pkgs.callPackage ./pkgs/linux_x13s.nix {
