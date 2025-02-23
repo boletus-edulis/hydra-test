@@ -13,6 +13,11 @@
       flake = false;
     };
 
+    linux-steeve-6-13 = {
+      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.13.y";
+      flake = false;
+    };
+
     linux-jhovold-6-12 = {
       url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.12";
       flake = false;
@@ -82,6 +87,11 @@
             linux_x13s_6_12_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-steeve-6-12;
               version = "6.12.12";
+              defconfig = "johan_defconfig";
+            };
+            linux_x13s_6_13_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
+              src = inputs.linux-steeve-6-13;
+              version = "6.13.4";
               defconfig = "johan_defconfig";
             };
             linux_x13s_6_12 = pkgs.callPackage ./pkgs/linux_x13s.nix {
