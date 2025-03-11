@@ -78,11 +78,11 @@
     "linux-steeve-6-12": {
       "flake": false,
       "locked": {
-        "lastModified": 1740169607,
-        "narHash": "sha256-BYKX/py6Gs94+NrT6irPc1QWr+JZjkk3LrZ+DtIWpqU=",
+        "lastModified": 1741588347,
+        "narHash": "sha256-zV+2ntDvHRrdC4kpGTfrIYPymIlLGSXr9jLLMVRFtl4=",
         "ref": "lenovo-x13s-linux-6.12.y",
-        "rev": "62349b66588aaa64cfc0bdfa895d6bc48a76380c",
-        "revCount": 1315076,
+        "rev": "1854179c3314dcb9fda2072bce08def5e402b950",
+        "revCount": 1315383,
         "type": "git",
         "url": "https://github.com/steev/linux"
       },
@@ -95,11 +95,11 @@
     "linux-steeve-6-13": {
       "flake": false,
       "locked": {
-        "lastModified": 1740168464,
-        "narHash": "sha256-XBZTTpUBGGBZC8F7Tap9pZDhWsGUujU5g+oekQhdLHQ=",
+        "lastModified": 1741590352,
+        "narHash": "sha256-BLC9vCAJDpz2nkQiTSLUbKNKKDOwbzW8lXCkWVeHROU=",
         "ref": "lenovo-x13s-linux-6.13.y",
-        "rev": "b8b66c49f7127ebf37aa2de96f58f928b8e32ace",
-        "revCount": 1326864,
+        "rev": "a7cfd010f03d2deb21403145e3788c5ed99717b8",
+        "revCount": 1327169,
         "type": "git",
         "url": "https://github.com/steev/linux"
       },
