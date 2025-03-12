@@ -84,26 +84,28 @@
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             iosevka-term = pkgs.iosevka.override { set = "Term"; };
 
-            linux_x13s_6_12_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-steeve-6-12;
-              version = "6.12.12";
-              defconfig = "johan_defconfig";
-            };
+            #linux_x13s_6_12_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
+            #  src = inputs.linux-steeve-6-12;
+            #  version = "6.12.12";
+            #  defconfig = "johan_defconfig";
+            #};
+
             linux_x13s_6_13_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-steeve-6-13;
-              version = "6.13.4";
+              version = "6.13.6";
               defconfig = "johan_defconfig";
             };
-            linux_x13s_6_12 = pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-jhovold-6-12;
-              version = "6.12.0";
-              defconfig = "johan_defconfig";
-            };
-            linux_x13s_6_13 = pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-jhovold-6-13;
-              version = "6.13.0-rc7";
-              defconfig = "johan_defconfig";
-            };
+
+            #linux_x13s_6_12 = pkgs.callPackage ./pkgs/linux_x13s.nix {
+            #  src = inputs.linux-jhovold-6-12;
+            #  version = "6.12.0";
+            #  defconfig = "johan_defconfig";
+            #};
+            #linux_x13s_6_13 = pkgs.callPackage ./pkgs/linux_x13s.nix {
+            #  src = inputs.linux-jhovold-6-13;
+            #  version = "6.13.0-rc7";
+            #  defconfig = "johan_defconfig";
+            #};
           };
 
           devShells.default = pkgs.mkShell {
