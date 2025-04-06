@@ -96,6 +96,14 @@
               defconfig = "johan_defconfig";
             };
 
+            linux_x13s = let
+              linux_version = import ./linux_version.nix;
+            in pkgs.callPackage ./pkgs/linux_x13s.nix {
+              src = inputs.linux-steeve-6-13;
+              version = linux_version.version;
+              defconfig = "johan_defconfig";
+            };
+
             #linux_x13s_6_12 = pkgs.callPackage ./pkgs/linux_x13s.nix {
             #  src = inputs.linux-jhovold-6-12;
             #  version = "6.12.0";
