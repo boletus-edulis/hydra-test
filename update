@@ -12,7 +12,7 @@ cd $LINUX_SRC
 # SUBLEVEL = 7
 # EXTRAVERSION =
 # NAME = Baby Opossum Posse
-eval $(head -6 Makefile | sed -s "s/ = /=/")
+eval $(head -6 Makefile | tail -5 | sed -s "s/ = /=/" | egrep -v 'EXTRAVERSION|NAME')
 cd -
 LINUX_VERSION=./linux_version.nix
 cat>$LINUX_VERSION<<EOF
