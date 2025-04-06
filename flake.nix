@@ -100,7 +100,7 @@
               linux_version = import ./linux_version.nix;
             in pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-steeve-6-13;
-              version = linux_version.version;
+              version = linux_version;
               defconfig = "johan_defconfig";
             };
 

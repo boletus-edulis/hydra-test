@@ -16,9 +16,7 @@ eval $(head -6 Makefile | tail -5 | sed -s "s/ = /=/" | egrep -v 'EXTRAVERSION|N
 cd -
 LINUX_VERSION=./linux_version.nix
 cat>$LINUX_VERSION<<EOF
-{
-  version = $VERSION.$PATCHLEVEL.$SUBLEVEL;
-}
+"$VERSION.$PATCHLEVEL.$SUBLEVEL"
 EOF
 /home/Us0r/.nix-profile/bin/git add $LINUX_VERSION
 /home/Us0r/.nix-profile/bin/git commit -m "update linux version"
