@@ -90,12 +90,6 @@
             #  defconfig = "johan_defconfig";
             #};
 
-            linux_x13s_6_13_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-steeve-6-13;
-              version = "6.13.8";
-              defconfig = "johan_defconfig";
-            };
-
             linux_x13s = let
               linux_version = import ./linux_version.nix;
             in pkgs.callPackage ./pkgs/linux_x13s.nix {
