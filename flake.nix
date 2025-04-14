@@ -48,7 +48,7 @@
             inherit system;
             overlays = [
               (import inputs.rust-overlay)
-              (import inputs.emacs-overlay)
+              #(import inputs.emacs-overlay)
             ];
           };
           rustVersion = "latest";
@@ -75,7 +75,7 @@
         {
           packages = {
             inherit (pkgs) thunderbird firefox scribus libvirt k3s emacs-nox git
-              qemu waydroid emacs-git-nox;
+              qemu waydroid;
             inherit (pkgs.pkgsMusl) openssh;
             inherit rustDev;
           } // {
