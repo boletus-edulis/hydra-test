@@ -82,7 +82,7 @@
             x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
             qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
-            iosevka-term = pkgs.iosevka.override { set = "Term"; };
+            #iosevka-term = pkgs.iosevka.override { set = "Term"; };
 
             #linux_x13s_6_12_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
             #  src = inputs.linux-steeve-6-12;
