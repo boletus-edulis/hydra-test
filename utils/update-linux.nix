@@ -5,16 +5,17 @@
 }@args:
 
 let
-  cuf = pkgs.coreutils-full;
-in
-pkgs.writeShellScriptBin "echo-linux-version" ''
-  HEAD=${pkgs.coreutils-full}/bin/head
-  TAIL=${pkgs.coreutils-full}/bin/tail
-  SED=${pkgs.gnused}/bin/sed
-  EGREP=${pkgs.gnugrep}/bin/egrep
+  scriptName = "echo-linux-version";
+  script = pkgs.writeShellScriptBin scriptName ''
+    cd ${linux_pkg.src.outPath}
+    eval $(head -6 Makefile | tail -5 | sed -s "s/ = /=/" | egrep -v 'EXTRAVERSION|NAME')
+    echo "$VERSION.$PATCHLEVEL.$SUBLEVEL"
+  '';
+  scriptRunEnv = with pkgs; [ coreutils-full gnused gnugrep ];
 
-  cd ${linux_pkg.src.outPath}
-  eval $($HEAD -6 Makefile | $TAIL -5 | $SED -s "s/ = /=/" | $EGREP -v 'EXTRAVERSION|NAME')
-
-  echo "$VERSION.$PATCHLEVEL.$SUBLEVEL"
-''
+in pkgs.symlinkJoin {
+  name = scriptName;
+  paths = [ script ] ++ scriptRunEnv;
+  buildInputs = [ pkgs.makeWrapper ];
+  postBuild = "wrapProgram $out/bin/${scriptName} --prefix PATH : $out/bin";
+}
