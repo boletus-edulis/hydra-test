@@ -8,23 +8,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    linux-steeve-6-12 = {
-      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.12.y";
-      flake = false;
-    };
-
     linux-steeve-6-13 = {
       url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.13.y";
       flake = false;
     };
 
-    linux-jhovold-6-12 = {
-      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.12";
-      flake = false;
-    };
-
-    linux-jhovold-6-13 = {
-      url = "git+https://github.com/jhovold/linux?ref=wip/sc8280xp-6.13-rc7";
+    linux-steeve-6-14 = {
+      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.14.y";
       flake = false;
     };
 
@@ -93,7 +83,7 @@
             linux_x13s = let
               linux_version = import ./linux_version.nix;
             in pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-steeve-6-13;
+              src = inputs.linux-steeve-6-14;
               version = linux_version;
               defconfig = "johan_defconfig";
             };
