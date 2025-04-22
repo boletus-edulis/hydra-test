@@ -8,11 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    linux-steeve-6-13 = {
-      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.13.y";
-      flake = false;
-    };
-
     linux-steeve-6-14 = {
       url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.14.y";
       flake = false;
@@ -51,16 +46,6 @@
               "rust-analyzer-preview"
             ];
           };
-
-          #inherit (nixpkgs.lib.customisation) hydraJob;
-          # builtins.getAttr system packages
-          #getNames = set: builtins.attrNames (builtins.getAttr system set);
-          # transpose = set: lib.genAttrs (builtins.attrNames (builtins.getAttr system set))
-          #  (name: { "${system}" = set."${name}"; });
-          # hydraJobs = transpose self.packages;
-          #transpose = set: (builtins.mapAttrs
-          #  (name: value: { "${system}" = value;} )
-          #  (lib.getAttr system set));
         in
         {
           packages = {
@@ -69,16 +54,14 @@
             inherit (pkgs.pkgsMusl) openssh;
             inherit rustDev;
           } // {
+            linux_version = pkgs.callPackage ./utils/update-linux.nix {
+              linux_pkg = self'.packages.linux_x13s;
+            };
+
             x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
             qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             #iosevka-term = pkgs.iosevka.override { set = "Term"; };
-
-            #linux_x13s_6_12_steev = pkgs.callPackage ./pkgs/linux_x13s.nix {
-            #  src = inputs.linux-steeve-6-12;
-            #  version = "6.12.12";
-            #  defconfig = "johan_defconfig";
-            #};
 
             linux_x13s = let
               linux_version = import ./linux_version.nix;
@@ -87,17 +70,6 @@
               version = linux_version;
               defconfig = "johan_defconfig";
             };
-
-            #linux_x13s_6_12 = pkgs.callPackage ./pkgs/linux_x13s.nix {
-            #  src = inputs.linux-jhovold-6-12;
-            #  version = "6.12.0";
-            #  defconfig = "johan_defconfig";
-            #};
-            #linux_x13s_6_13 = pkgs.callPackage ./pkgs/linux_x13s.nix {
-            #  src = inputs.linux-jhovold-6-13;
-            #  version = "6.13.0-rc7";
-            #  defconfig = "johan_defconfig";
-            #};
           };
 
           devShells.default = pkgs.mkShell {

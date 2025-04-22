@@ -5,19 +5,8 @@ cd /home/Us0r/sources/hydra-test/
 /home/Us0r/.nix-profile/bin/git checkout -f origin/master
 /run/current-system/sw/bin/nix flake update --commit-lock-file
 
-LINUX_SRC=$(eval echo $(nix eval .#packages.aarch64-linux.linux_x13s.src.outPath))
-cd $LINUX_SRC
-# VERSION = 6
-# PATCHLEVEL = 13
-# SUBLEVEL = 7
-# EXTRAVERSION =
-# NAME = Baby Opossum Posse
-eval $(head -6 Makefile | tail -5 | sed -s "s/ = /=/" | egrep -v 'EXTRAVERSION|NAME')
-cd -
 LINUX_VERSION=./linux_version.nix
-cat>$LINUX_VERSION<<EOF
-"$VERSION.$PATCHLEVEL.$SUBLEVEL"
-EOF
+nix run .#packages.aarch64-linux.linux_version > $LINUX_VERSION
 /home/Us0r/.nix-profile/bin/git add $LINUX_VERSION
 /home/Us0r/.nix-profile/bin/git commit -m "update linux version"
 
