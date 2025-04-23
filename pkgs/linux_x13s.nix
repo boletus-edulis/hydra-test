@@ -32,6 +32,8 @@ pkgs.buildLinux (args // {
     PSTORE = yes;
     PSTORE_DEFLATE_COMPRESS = yes;
     ZLIB_DEFLATE = yes;
+
+    HID_LENOVO = module;
   };
   extraMeta.branch = "${version}-x13s";
 } // (args.argsOverride or {}))
