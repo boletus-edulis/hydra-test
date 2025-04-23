@@ -5,7 +5,7 @@ cd /home/Us0r/sources/hydra-test/
 /home/Us0r/.nix-profile/bin/git checkout -f origin/master
 /run/current-system/sw/bin/nix flake update --commit-lock-file
 
-LINUX_VERSION=$(nix run .#packages.aarch64-linux.linux_version)
+LINUX_VERSION=$(nix run .#packages.aarch64-linux.echo-linux-version)
 LINUX_VERSION_NIX=./linux_version.nix
 cat>$LINUX_VERSION_NIX<<EOF
 "$LINUX_VERSION"

@@ -54,7 +54,7 @@
             inherit (pkgs.pkgsMusl) openssh;
             inherit rustDev;
           } // {
-            linux_version = pkgs.callPackage ./utils/update-linux.nix {
+            echo-linux-version = pkgs.callPackage ./utils/echo-linux-version.nix {
               linux_pkg = self'.packages.linux_x13s;
             };
 
