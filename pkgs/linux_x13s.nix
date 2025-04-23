@@ -23,7 +23,7 @@ pkgs.buildLinux (args // {
     USB_UHCI_HCD = module;
     USB_EHCI_PCI = module;
     USB_OHCI_HCD_PCI = module;
-    USB_XHCI_PCI = module;
+    USB_XHCI_PCI = yes;
 
     # fix poweroff?
     POWER_RESET_SYSCON_POWEROFF = yes;
@@ -34,6 +34,8 @@ pkgs.buildLinux (args // {
     ZLIB_DEFLATE = yes;
 
     HID_LENOVO = module;
+    I2C_HID_ACPI = module;
+    ACPI = yes;
   };
   extraMeta.branch = "${version}-x13s";
 } // (args.argsOverride or {}))
