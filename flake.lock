@@ -44,11 +44,11 @@
     "linux-steeve-6-14": {
       "flake": false,
       "locked": {
-        "lastModified": 1745606522,
-        "narHash": "sha256-HMmqWt/dAa+LeIhtlxw81jx4X+0qbePYUv5ATD49ysg=",
+        "lastModified": 1746242790,
+        "narHash": "sha256-UtuCms7zCiKq7oqjbnIe4zPWvz1qIl0cxkZq8AyoNwI=",
         "ref": "lenovo-x13s-linux-6.14.y",
-        "rev": "31d66997d3abebf728c74712f528d7c316d0557c",
-        "revCount": 1339035,
+        "rev": "04bdb132421ba3404d65c16141aa8730b961daf3",
+        "revCount": 1339349,
         "type": "git",
         "url": "https://github.com/steev/linux"
       },
