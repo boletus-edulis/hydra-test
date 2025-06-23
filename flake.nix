@@ -13,6 +13,11 @@
       flake = false;
     };
 
+    linux-steeve-6-15 = {
+      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.15.y";
+      flake = false;
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
@@ -65,7 +70,7 @@
             linux_x13s = let
               linux_version = import ./linux_version.nix;
             in pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-steeve-6-14;
+              src = inputs.linux-steeve-6-15;
               version = linux_version;
               defconfig = "johan_defconfig";
             };
