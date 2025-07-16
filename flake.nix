@@ -66,6 +66,7 @@
             qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             #iosevka-term = pkgs.iosevka.override { set = "Term"; };
+            slbounce = pkgs.callPackage ./pkgs/slbounce.nix { };
 
             linux_x13s = let
               linux_version = import ./linux_version.nix;
