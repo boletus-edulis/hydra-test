@@ -6,7 +6,7 @@ let
   name = "t${cL}blaun${cL}h.${eL}x${eL}";
 in
 pkgs.stdenv.mkDerivation rec {
-  pname = "tcblaunch";
+  pname = "${name}";
   version = "9999";
 
   src = ./launch;
