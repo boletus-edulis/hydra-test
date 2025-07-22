@@ -8,18 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    linux-steeve-6-14 = {
-      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.14.y";
-      flake = false;
-    };
-
     linux-steeve-6-15 = {
       url = "git+https://github.com/steev/linux?ref=lenovo-x13s-linux-6.15.y";
-      flake = false;
-    };
-
-    linux-steeve-6-16-rc5 = {
-      url = "git+https://github.com/steev/linux?ref=lenovo-x13s-6.16.0-rc5";
       flake = false;
     };
 
