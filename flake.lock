@@ -44,11 +44,11 @@
     "linux-steeve-6-15": {
       "flake": false,
       "locked": {
-        "lastModified": 1752160282,
-        "narHash": "sha256-gqonc2HYXUrgO82VtQ/7FQuI7EcGS/iyhgAxohHISls=",
+        "lastModified": 1753470404,
+        "narHash": "sha256-NyHiEI/0kVLN1pBmetXjDWRW2lg+q+CRmCRVLenhD5Q=",
         "ref": "lenovo-x13s-linux-6.15.y",
-        "rev": "6217c259f42530e826266849a39a9b01374492d9",
-        "revCount": 1355447,
+        "rev": "a1219f0fc5664694cecfd0aa67460bc770c00cec",
+        "revCount": 1355837,
         "type": "git",
         "url": "https://github.com/steev/linux"
       },
@@ -125,11 +125,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753411536,
-        "narHash": "sha256-lm88KTYlhsh5usJLGlWQbG4HWWr2FdO26TSssCw6Wdg=",
+        "lastModified": 1753497720,
+        "narHash": "sha256-yzZkDMVfPpNyTciQOfriWpRXrgGNT/cvrFAEQZ//SZs=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "7ae12d14d6bb74acfadf31e17a204d928eaf77b8",
+        "rev": "c8b8b812010515b7d9bd7e538f06a9f4edb373ff",
         "type": "github"
       },
       "original": {
