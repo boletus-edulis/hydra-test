@@ -49,7 +49,7 @@
         in
         {
           packages = {
-            inherit (pkgs) thunderbird firefox scribus libvirt emacs-nox git qemu_kvm qemu qemu-user qemu-utils;
+            inherit (pkgs) thunderbird firefox scribus libvirt emacs-nox git qemu_kvm qemu-user qemu-utils;
             inherit (pkgs.pkgsMusl) openssh;
             inherit rustDev;
           } // {
