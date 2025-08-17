@@ -8,8 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    linux-steeve-6-15 = {
-      url = "github:steev/linux/lenovo-x13s-linux-6.15.y";
+    linux-steeve-6-16 = {
+      url = "github:steev/linux/lenovo-x13s-linux-6.16.y";
       flake = false;
     };
 
@@ -72,7 +72,7 @@
             linux_x13s = let
               linux_version = import ./linux_version.nix;
             in pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-boletus-6-16;
+              src = inputs.linux-steeve-6-16;
               version = linux_version;
               defconfig = "johan_defconfig";
             };
