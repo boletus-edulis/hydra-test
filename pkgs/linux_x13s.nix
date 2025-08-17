@@ -36,6 +36,20 @@ pkgs.buildLinux (args // {
     HID_LENOVO = module;
     I2C_HID_ACPI = module;
     ACPI = yes;
+
+    VIRTUALIZATION = yes;
+    KVM = yes;
+    VHOST_NET = yes;
+    HIGH_RES_TIMER = yes;
+    HPET = yes;
+    COMPACTION = yes;
+    MIGRATION = yes;
+    KSM = yes;
+    SYSFS = yes;
+    PROC_FS = yes;
+    TRANSPARENT_HUGEPAGE = yes;
+    CGROUPS = yes;
+    KVM_HYPERV = yes;
   };
   extraMeta.branch = "${version}-x13s";
 } // (args.argsOverride or {}))
