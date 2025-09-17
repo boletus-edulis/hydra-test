@@ -61,11 +61,11 @@
     "linux-steeve-6-16": {
       "flake": false,
       "locked": {
-        "lastModified": 1757609262,
-        "narHash": "sha256-5cuQwBeAUPQL3rr5DaCUwneEVsjhBZFN4ZAwPNPdwKg=",
+        "lastModified": 1758060825,
+        "narHash": "sha256-g+0pbpxEGvpIQY3Q9309mNtOwpOBw8GmGAflmvHgV8A=",
         "owner": "steev",
         "repo": "linux",
-        "rev": "cb1f33db72130cbc6220bc0a331cec9cb68ba571",
+        "rev": "6da6d19dd00e5181d016cb948e52011e4e775f9a",
         "type": "github"
       },
       "original": {
