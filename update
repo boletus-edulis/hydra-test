@@ -3,7 +3,7 @@
 cd /home/Us0r/sources/hydra-test/
 /home/Us0r/.nix-profile/bin/git fetch -a
 /home/Us0r/.nix-profile/bin/git checkout -f origin/master
-/run/current-system/sw/bin/nix flake update --commit-lock-file
+/run/current-system/sw/bin/nix flake update --commit-lock-file --option download-buffer-size 512M
 
 LINUX_VERSION=$(nix run .#packages.aarch64-linux.echo-linux-version)
 LINUX_VERSION_NIX=./linux_version.nix
