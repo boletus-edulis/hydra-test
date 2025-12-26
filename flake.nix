@@ -74,8 +74,8 @@
             in pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-boletus-6-18;
               version = linux_version;
-              defconfig = "qcom_laptops.config";
-              #defconfig = "johan_defconfig";
+              #defconfig = "qcom_laptops.config";
+              defconfig = "johan_defconfig";
             };
           };
 
