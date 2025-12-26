@@ -74,7 +74,8 @@
             in pkgs.callPackage ./pkgs/linux_x13s.nix {
               src = inputs.linux-steeve-6-18;
               version = linux_version;
-              defconfig = "johan_defconfig";
+              defconfig = "qcom_laptops.config";
+              #defconfig = "johan_defconfig";
             };
           };
 
