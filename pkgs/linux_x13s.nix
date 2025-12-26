@@ -11,7 +11,7 @@ let
 in
 pkgs.buildLinux (args // {
   inherit modDirVersion;
-  inherit defconfig;
+  #inherit defconfig;
   inherit version;
   inherit src;
 
