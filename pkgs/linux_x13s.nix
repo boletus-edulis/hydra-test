@@ -39,7 +39,7 @@ pkgs.buildLinux (args // {
 
     VIRTUALIZATION = yes;
     KVM = yes;
-    VHOST_NET = yes;
+    VHOST_NET = module;
     HIGH_RES_TIMER = yes;
     HPET = yes;
     COMPACTION = yes;
