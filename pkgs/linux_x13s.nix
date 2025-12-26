@@ -3,7 +3,7 @@
 , lib
 , stdenv
 , version
-, defconfig
+#, defconfig
 , ...
 } @ args:
 let
