@@ -9,7 +9,7 @@
     };
 
     linux-boletus-6-18 = {
-      url = "github:boletus-edulis/linux/lenovo-x13s-linux-6.18.y";
+      url = "github:boletus-edulis/linux/180b851761121";
       flake = false;
     };
 
