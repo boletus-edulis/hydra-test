@@ -8,8 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    linux-steeve-6-18 = {
-      url = "github:steev/linux/lenovo-x13s-linux-6.18.y";
+    linux-boletus-6-18 = {
+      url = "github:boletus-edulis/linux/lenovo-x13s-linux-6.18.y";
       flake = false;
     };
 
@@ -72,7 +72,7 @@
             linux_x13s = let
               linux_version = import ./linux_version.nix;
             in pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-steeve-6-18;
+              src = inputs.linux-boletus-6-18;
               version = linux_version;
               defconfig = "qcom_laptops.config";
               #defconfig = "johan_defconfig";
