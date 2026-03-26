@@ -31,7 +31,10 @@
 
   outputs = { self, nixpkgs, flake-parts, ... } @ inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" "aarch64-linux" ];
+      systems = [
+	#"x86_64-linux"
+	"aarch64-linux"
+      ];
       perSystem = { config, self', inputs', pkgs, system, lib, ... }:
         let
           pkgs = import nixpkgs {
