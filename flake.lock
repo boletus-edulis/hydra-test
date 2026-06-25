@@ -41,40 +41,6 @@
         "type": "github"
       }
     },
-    "linux-boletus-6-18": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1766733193,
-        "narHash": "sha256-zw6YKqadA0okdR0SyLZeLWrsvxOn8KyA2XffkTEKO/E=",
-        "owner": "boletus-edulis",
-        "repo": "linux",
-        "rev": "180b851761121f324b1b0dd4588a1af4fc05b9a0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "boletus-edulis",
-        "ref": "180b851761121",
-        "repo": "linux",
-        "type": "github"
-      }
-    },
-    "linux-steeve-6-17": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1764402022,
-        "narHash": "sha256-P5de3W+Bc4yFwjnPQgCKv3JusTOy7On3p6hfJ2l2ipc=",
-        "owner": "steev",
-        "repo": "linux",
-        "rev": "6fc7fcbd9af001a45dfef6dec0feb9abe0787666",
-        "type": "github"
-      },
-      "original": {
-        "owner": "steev",
-        "ref": "lenovo-x13s-linux-6.17.y",
-        "repo": "linux",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1781577229,
@@ -129,8 +95,6 @@
       "inputs": {
         "emacs-overlay": "emacs-overlay",
         "flake-parts": "flake-parts",
-        "linux-boletus-6-18": "linux-boletus-6-18",
-        "linux-steeve-6-17": "linux-steeve-6-17",
         "nixpkgs": "nixpkgs",
         "nixpkgs-lib": "nixpkgs-lib",
         "rust-overlay": "rust-overlay"
