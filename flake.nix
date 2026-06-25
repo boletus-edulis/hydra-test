@@ -8,16 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    linux-boletus-6-18 = {
-      url = "github:boletus-edulis/linux/180b851761121";
-      flake = false;
-    };
-
-    linux-steeve-6-17 = {
-      url = "github:steev/linux/lenovo-x13s-linux-6.17.y";
-      flake = false;
-    };
-
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
@@ -32,7 +22,6 @@
   outputs = { self, nixpkgs, flake-parts, ... } @ inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
-	#"x86_64-linux"
 	"aarch64-linux"
       ];
       perSystem = { config, self', inputs', pkgs, system, lib, ... }:
@@ -61,25 +50,12 @@
             inherit (pkgs.pkgsMusl) openssh;
             inherit rustDev;
           } // {
-            echo-linux-version = pkgs.callPackage ./utils/echo-linux-version.nix {
-              linux_pkg = self'.packages.linux_x13s;
-            };
-
             x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
             qrtr = pkgs.callPackage ./pkgs/qrtr.nix { };
             pd-mapper = pkgs.callPackage ./pkgs/pd-mapper.nix { inherit self'; };
             #iosevka-term = pkgs.iosevka.override { set = "Term"; };
             slbounce = pkgs.callPackage ./pkgs/slbounce.nix { };
             launch = pkgs.callPackage ./pkgs/launch.nix { };
-
-            linux_x13s = let
-              linux_version = import ./linux_version.nix;
-            in pkgs.callPackage ./pkgs/linux_x13s.nix {
-              src = inputs.linux-boletus-6-18;
-              version = linux_version;
-              #defconfig = "qcom_laptops.config";
-              #defconfig = "johan_defconfig";
-            };
           };
 
           devShells.default = pkgs.mkShell {
