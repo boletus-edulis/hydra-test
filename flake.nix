@@ -47,7 +47,7 @@
         {
           packages = {
             inherit (pkgs) thunderbird firefox scribus libvirt emacs-nox git qemu_kvm qemu-utils;
-            inherit (pkgs.pkgsMusl) openssh;
+            #inherit (pkgs.pkgsMusl) openssh;
             inherit rustDev;
           } // {
             x13s-firmware = pkgs.callPackage ./pkgs/firmware_x13s.nix { };
